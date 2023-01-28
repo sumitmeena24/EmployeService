@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmployerComponent } from './employer/employer/employer.component';
 import { ButtonRendererComponent } from './employer/employer/button-renderer.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -30,7 +31,8 @@ import { ButtonRendererComponent } from './employer/employer/button-renderer.com
     BrowserAnimationsModule,
     MatButtonModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,7 +6,7 @@ import { ICellRendererAngularComp } from 'ag-grid-angular';
 @Component({
   selector: 'app-button-renderer',
   template: `
-    <button type="button" (click)="onClick($event)">{{label}}</button>
+    <button type="button" mat-raised-button color="warn" (click)="onClick($event)">{{label}}</button>
     `
 })
 

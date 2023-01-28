@@ -32,44 +32,37 @@ export class EmployerComponent implements OnInit {
   }}
 
   ngOnInit(): void {
-    this.employerService.getEmployer().subscribe((data :any)=> {
-      console.log(data);
-      this.rowData = data;
-    })
+    this.employerList();
   }
 
   defaultColDef:ColDef={
     sortable:true,filter:true
   }
 
+  employerList(){
+    this.employerService.getEmployer().subscribe((data :any)=> {
+      this.rowData = data;
+    })
+  }
+
   submitform(params:object) {
      this.employerService.saveEmployer(params).subscribe((data :any)=> {
-      //this.rowData = data;
+     this.employerList();
     });
   }
 
 onDeleteButtonClick(params:any)
 {
-  console.log("params delet",params);
  this.employerService.deleteEmployer(params.data).subscribe((data :any)=> {
-  //this.rowData = data;
+  this.employerList();
 });
 }
 
 onRowValueChanged(event: any) {
   var data = event.data;
-  console.log("event",event);
-  console.log(
-    'onRowValueChanged: (' +
-      data.firstName +
-      ', ' +
-      data.lastName +
-      ', ' +
-      data.salary +
-      ', ' +
-      data._id +
-      ')'
-  );
+  this.employerService.updateEmployer(data).subscribe((res :any)=> {
+    this.employerList();
+  });
 }
 
    

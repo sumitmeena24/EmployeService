@@ -15,12 +15,14 @@ export class EmployerService {
   }
 
   saveEmployer(param:any){
-    console.log("saveEmployer",param);
     return this.httpClient.post(this.baseUrl,param);
   }
 
   deleteEmployer(param:any){
-    console.log("deleteEmployer",param);
-    return this.httpClient.delete(this.baseUrl,param);
+    return this.httpClient.post(this.baseUrl+'/delete',param);
+  }
+
+  updateEmployer(param:any){
+    return this.httpClient.post(this.baseUrl+'/update',param);
   }
 }
