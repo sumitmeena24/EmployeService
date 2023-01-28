@@ -1,4 +1,4 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 <!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
 <!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
@@ -318,66 +318,9 @@
 
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
-  {{title}}
+  <h2>{{title}}</h2>
 </div>
 <div class="content" role="main">
-  <table>
-    <caption style="margin-bottom:'11px'"><b>Employee Details</b></caption>
-    <tr>
-      <th>
-        First Name
-      </th>
-      <th>
-        Last Name
-      </th>
-      <th>
-        Email
-      </th>
-      <th>
-        Phone Number
-      </th>
-      <th>
-        Address
-      </th>
-      <th>
-        Salary
-      </th>
-    </tr>
-    <tr ngFor="employee for employeeList">
-      <td>
-        amit
-      </td>
-
-      <td>
-        solanki
-      </td>
-
-      <td>
-        amit@g.com
-      </td>
-
-      <td>
-        566565665
-      </td>
-
-      <td>
-        India
-      </td>
-
-      <td>
-        45,000
-      </td>
-    </tr>
-  </table>
-  <form name="employeForm">
-    <h4>Employe Form</h4>
-    <input type="text" name="firstName" placeholder="First Name" required/>
-    <input type="text" name="lastName" placeholder="Last Name" required/>
-    <input type="email" name="emailId" placeholder="email@abc.com" required/>
-    <input type="number" name="phoneNumber" placeholder="Phone Number" required/>
-    <input type="text" name="address" placeholder="Address" minlength="5" maxlength="200" required/>
-    <input type="number" name="salary" placeholder="Salary" required/>
-    <button (click)="submitform(employeForm)">Submit</button>
-  </form>
+  <app-employer></app-employer>
 </div>
 <router-outlet></router-outlet>

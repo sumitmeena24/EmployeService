@@ -1,0 +1,50 @@
+<div style="float: left;margin-right:10px">
+    <ag-grid-angular class="ag-theme-alpine" style="height:320px;width:660px;" [rowData]="rowData"
+        [columnDefs]="colDefs" [defaultColDef]="defaultColDef" [animateRows]="true" 
+        [editType]="'fullRow'" 
+        [frameworkComponents]="frameworkComponents"
+      (rowValueChanged)="onRowValueChanged($event)">
+    </ag-grid-angular>
+</div>
+<div style="float: left" class="formborder">
+    <h2 class="header">Employe Form</h2>
+    <form #f="ngForm">
+        <table cellspacing="0" class="tablespace">
+            <tr>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="First Name" ngModel name="firstName" required>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Last Name" ngModel name="lastName" required>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <input type="number" matInput placeholder="Cell No." ngModel name="cellNo" required>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <input type="email" matInput placeholder="EmailId" ngModel name="emailId" required>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <input type="number" matInput placeholder="Salary" ngModel name="salary" required>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <input type="text" matInput placeholder="Address" ngModel  minlength="5" maxlength="200" name="address" required>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <button type="button" mat-raised-button color="primary" (click)="submitform(f.value)">Submit</button>
+        </table>
+    </form>
+</div>
